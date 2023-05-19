@@ -57,25 +57,49 @@
 .search input {
 	width: 80%;
 	height: 45px;
-	border: none;
-	outline: none;
 	border-radius: 25px;
 	padding: 5px 45px;
 	grid-column: 1 / -1;
 	grid-row: 1 / -1;
 }
 
-.gallery .images {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-auto-flow: dense;
+input,
+button,
+i {
+	outline: none;
+	border: none;
+	border-radius: 5px;
 }
 
-.gallery .images > li {
-	list-style: none;
+.gallery {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
-.gallery .images img {
+
+.gallery .images {
+	max-width: 95%;
+	gap: 15px;
+	columns: 5 250px;
+	margin: 20px 0;
+}
+.gallery .card {
+	list-style: none;
+	margin-bottom: 14px;
+	border-radius: 50px;
+}
+
+.images img {
 	width: 100%;
-	object-fit: cover;
-	border: 2px solid red;
+	height: 100%;
+	display: block;
+}
+
+.gallery .load-more {
+	cursor: pointer;
+	margin: 50px 0;
+	padding: 12px 27px;
+	font-size: 1.2rem;
+	color: white;
+	background-color: purple;
 }
