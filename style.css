@@ -86,7 +86,33 @@ i {
 .gallery .card {
 	list-style: none;
 	margin-bottom: 14px;
-	border-radius: 50px;
+	border-radius: 3px;
+	position: relative;
+	overflow: hidden;
+}
+.gallery .card button {
+	cursor: pointer;
+	padding: 3px 8px;
+	font-size: 1rem;
+}
+.gallery .card .details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	padding: 14px 20px;
+	bottom: -100px;
+	transition: all 0.3s ease;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.gallery .card:hover .details {
+	bottom: 0;
+}
+
+.gallery .card .photographer {
+	pointer-events: none;
+	color: white;
 }
 
 .images img {
