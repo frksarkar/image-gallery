@@ -1,6 +1,6 @@
 const images = document.querySelector('.images');
 const module = {
-	numberOfImage: 50,
+	numberOfImage: 10,
 };
 
 function randomNumber(number) {
@@ -10,9 +10,17 @@ function randomNumber(number) {
 
 function imageElement() {
 	const element = (image = `<li class="card">
-    <img src="https://picsum.photos/${randomNumber(2)}00/${randomNumber(
+    <img src="https://picsum.photos/${randomNumber(2)}000/${randomNumber(
 		2
-	)}00?random=${randomNumber(10)}" alt="" /> </li>`);
+	)}000?random=${randomNumber(100)}" alt="" />
+	<div class="details">
+		<div class="photographer">
+			<i class="fa fa-camera"></i>
+				<span> Maria watson </span>
+		</div>
+		<button><i class="fa-solid fa-download"></i></button>
+	</div>
+	</li>`);
 
 	return element;
 }
