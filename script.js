@@ -1,6 +1,6 @@
 const images = document.querySelector('.images');
 const module = {
-	numberOfImage: 10,
+	numberOfImage: 50,
 };
 
 function randomNumber(number) {

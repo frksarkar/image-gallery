@@ -80,7 +80,7 @@ i {
 .gallery .images {
 	max-width: 95%;
 	gap: 15px;
-	columns: 5 250px;
+	columns: 6 250px;
 	margin: 20px 0;
 }
 .gallery .card {
