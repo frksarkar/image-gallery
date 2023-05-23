@@ -3,11 +3,15 @@ const loadingButton = document.querySelector('.load-more');
 const searchInput = document.querySelector('.search-box input');
 const showImage = document.querySelector('.image-view-box');
 const exitShowImage = showImage.querySelector('.buttons ');
+const closeShowImage = showImage.querySelector('.fa-times');
+const downloadImgBtn = showImage.querySelector('.fa-download');
+
 const module = {
 	apiKey: 'rymXHG9HH8RV7K8SsSS4iSqggLPIwyYtIjUEApVG95OhURkuOHpH4WSO',
 	numberOfImage: 15,
 	pageNumber: 1,
 	searchWord: null,
+	imgDownloadLink: null,
 };
 
 const getImages = (url) => {
@@ -31,11 +35,6 @@ getImages(
 	`https://api.pexels.com/v1/curated?page=${module.pageNumber}&per_page=${module.numberOfImage}`
 );
 
-function randomNumber(number) {
-	const num = Math.floor(Math.random() * number + 1);
-	return num;
-}
-
 const downloadImg = (link) => {
 	fetch(link)
 		.then((res) => res.blob())
@@ -50,7 +49,13 @@ const downloadImg = (link) => {
 function showImageBox(name, img) {
 	showImage.querySelector('span').innerHTML = name;
 	showImage.querySelector('img').src = img;
-	showImage.style.display = 'block';
+	showImage.classList.add('show');
+	module.imgDownloadLink = img;
+}
+
+function closeImageBox() {
+	showImage.classList.remove('show');
+	module.imgDownloadLink = null;
 }
 
 function imageElement(photos) {
@@ -89,4 +94,9 @@ searchInput.addEventListener('keyup', (e) => {
 		const url = `https://api.pexels.com/v1/search?query=${module.searchWord}?page=${module.pageNumber}&per_page=${module.numberOfImage}`;
 		getImages(url);
 	}
+});
+
+closeShowImage.addEventListener('click', closeImageBox);
+downloadImgBtn.addEventListener('click', () => {
+	downloadImg(module.imgDownloadLink);
 });
