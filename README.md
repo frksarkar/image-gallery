@@ -1,2 +1,2 @@
 # image-gallery
-live demo link: https://faruksarkar.github.io/image-gallery/
+live demo link: https://frksarkar.github.io/image-gallery/
