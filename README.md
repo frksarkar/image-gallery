@@ -37,7 +37,7 @@ Project Structure
 
 *   **index.html**: Contains the structure and layout for displaying images.
 *   **style.css**: Handles the styling and responsiveness of the gallery.
-*   **script.js**: (Optional) This file is available for adding interactive features in the future.
+*   **script.js**: (Optional) This file is available to add interactive features in the future.
 
 Live Demo
 ---------
@@ -59,4 +59,4 @@ Technologies
 License
 -------
 
-This project is licensed under the MIT License. For more details, see the **LICENSE** file.
+This project is licensed under the MIT License. For more details, please look at the **LICENSE** file.
